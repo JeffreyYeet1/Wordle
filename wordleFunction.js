@@ -49,22 +49,19 @@ function countUnique(w,l){
     return c;
 }
 function select_word(){
-    const url = 'https://random-word-api.p.rapidapi.com/L/5';
-    const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '1d230d3977msha7e92028d86e2ffp171927jsnfdc14268c0e3',
-		'X-RapidAPI-Host': 'random-word-api.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = fetch(url, options);
-	const result = response.text();
-	return result;
-} catch (error) {
-	console.error(error);
-}
+    let words = [
+'forge', 'brave', 'plumb', 'shirk', 'flute', 'swarm', 'grasp', 'razor', 'spade', 'mirth',
+'glove', 'blink', 'skirt', 'quirk', 'vixen', 'jumbo', 'oasis', 'wagon', 'hurry', 'glide',
+'snarl', 'brawl', 'funky', 'gloat', 'squid', 'climb', 'chalk', 'jazzy', 'haste', 'frost',
+'dwell', 'joint', 'dusky', 'latch', 'twirl', 'brisk', 'fizzy', 'trace', 'frown', 'smirk',
+'pouch', 'fjord', 'knead', 'scope', 'evoke', 'ozone', 'jolly', 'abyss', 'ruddy', 'whisk',
+'cinch', 'mound', 'amber', 'wharf', 'joust', 'funky', 'gland', 'yacht', 'waive', 'flank',
+'drift', 'vowel', 'peach', 'forge', 'gruff', 'swoop', 'nudge', 'twine', 'spout', 'rinse',
+'tally', 'latch', 'thump', 'giddy', 'chime', 'briny', 'wrist', 'jived', 'spicy', 'plush',
+'knack', 'slump', 'fizzy', 'flaky', 'gleam', 'witty', 'plumb', 'tawny', 'lurid', 'nippy',
+'tepid', 'plush', 'zesty', 'grime', 'boast', 'quirk', 'blimp', 'mound', 'forge', 'bluff'
+];
+    return words[Math.floor(Math.random() * words.length)];
 }
 function showBoxW() {
     const box = document.getElementById('boxW');
