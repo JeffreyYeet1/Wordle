@@ -1,0 +1,57 @@
+td{
+    width: 55px;
+    height: 55px;
+    outline: 2px solid rgb(58,58,60); /*changes to (86,87,88) when a letter is entered*/
+    background-color: rgb(18,18,19);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight:bold;
+    font-size: 18px;
+    font-family: 'Clear Sans',sans-serif;
+    color:white;
+}
+
+body{
+    background-color:rgb(18,18,19);
+}
+
+table{
+
+    border-spacing:9px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#output{
+    color:white;
+    width:0px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+div{
+    font-size:35px;
+    color:white;
+    text-align: center;
+}
+
+.box{
+    display:none;
+    width: 340px;
+    height: 410px;
+    background-color:rgb(18,18,19);
+    margin-right:auto;
+    margin-left:auto;
+    font-size:35px;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position:relative;
+    bottom:440px;
+}
+
+
+

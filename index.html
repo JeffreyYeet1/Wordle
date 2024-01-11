@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel = "stylesheet" href = "wordle.css">
+    <link href="https://fonts.cdnfonts.com/css/clear-sans" rel="stylesheet">
+</head>
+<body>
+    <div>Wordle</div>
+    <hr><br>
+    <table>
+        <th></th>
+        <tr><td id = "t00"><div id = "00"></div></td>
+            <td id = "t01"><div id = "01"></div></td>
+            <td id = "t02"><div id = "02"></div></td>
+            <td id = "t03"><div id = "03"></div></td>
+            <td id = "t04"><div id = "04"></div></td>
+        </tr>
+        <tr><td id = "t10"><div id = "10"></div></td>
+            <td id = "t11"><div id = "11"></div></td>
+            <td id = "t12"><div id = "12"></div></td>
+            <td id = "t13"><div id = "13"></div></td>
+            <td id = "t14"><div id = "14"></div></td>
+        </tr>
+        <tr><td id = "t20"><div id = "20"></div></td>
+            <td id = "t21"><div id = "21"></div></td>
+            <td id = "t22"><div id = "22"></div></td>
+            <td id = "t23"><div id = "23"></div></td>
+            <td id = "t24"><div id = "24"></div></td>
+        </tr>
+        <tr><td id = "t30"><div id = "30"></div></td>
+            <td id = "t31"><div id = "31"></div></td>
+            <td id = "t32"><div id = "32"></div></td>
+            <td id = "t33"><div id = "33"></div></td>
+            <td id = "t34"><div id = "34"></div></td>
+        </tr>
+        <tr><td id = "t40"><div id = "40"></div></td>
+            <td id = "t41"><div id = "41"></div></td>
+            <td id = "t42"><div id = "42"></div></td>
+            <td id = "t43"><div id = "43"></div></td>
+            <td id = "t44"><div id = "44"></div></td>
+        </tr>
+        <tr><td id = "t50"><div id = "50"></div></td>
+            <td id = "t51"><div id = "51"></div></td>
+            <td id = "t52"><div id = "52"></div></td>
+            <td id = "t53"><div id = "53"></div></td>
+            <td id = "t54"><div id = "54"></div></td>
+        </tr>
+    </table>
+    <div class = "box" id = "boxL">
+        <p>You Lost!</p>
+        <p>The word was</p>
+        <div id = "Given"></div>
+        <br>
+        <button onclick = "playAgain()">
+            Play again?
+        </button>
+    </div>
+    <div class = "box" id = "boxW">
+        <p>You Won!</p>
+        <p>The word was</p>
+        <div id = "Given1"></div>
+        <button onclick = "playAgain()">
+            Play again?
+        </button>
+    </div>
+    <script src = "wordleFunction.js"></script>
+    
+</body>
+</html>
