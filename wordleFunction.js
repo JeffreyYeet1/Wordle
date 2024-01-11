@@ -85,6 +85,7 @@ function playAgain(){
             }
     }
     level = 0;
+    win = false;
 }
 let win = false;
 let level = 0;
