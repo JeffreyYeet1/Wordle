@@ -49,19 +49,21 @@ function countUnique(w,l){
     return c;
 }
 function select_word(){
-    let words = [
-'forge', 'brave', 'plumb', 'shirk', 'flute', 'swarm', 'grasp', 'razor', 'spade', 'mirth',
-'glove', 'blink', 'skirt', 'quirk', 'vixen', 'jumbo', 'oasis', 'wagon', 'hurry', 'glide',
-'snarl', 'brawl', 'funky', 'gloat', 'squid', 'climb', 'chalk', 'jazzy', 'haste', 'frost',
-'dwell', 'joint', 'dusky', 'latch', 'twirl', 'brisk', 'fizzy', 'trace', 'frown', 'smirk',
-'pouch', 'fjord', 'knead', 'scope', 'evoke', 'ozone', 'jolly', 'abyss', 'ruddy', 'whisk',
-'cinch', 'mound', 'amber', 'wharf', 'joust', 'funky', 'gland', 'yacht', 'waive', 'flank',
-'drift', 'vowel', 'peach', 'forge', 'gruff', 'swoop', 'nudge', 'twine', 'spout', 'rinse',
-'tally', 'latch', 'thump', 'giddy', 'chime', 'briny', 'wrist', 'jived', 'spicy', 'plush',
-'knack', 'slump', 'fizzy', 'flaky', 'gleam', 'witty', 'plumb', 'tawny', 'lurid', 'nippy',
-'tepid', 'plush', 'zesty', 'grime', 'boast', 'quirk', 'blimp', 'mound', 'forge', 'bluff'
-];
-    return words[Math.floor(Math.random() * words.length)];
+    const apiUrl = "https://random-word-api.herokuapp.com/word?length=5";
+
+    fetch(apiUrl)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        return data[0].toString();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
 function showBoxW() {
     const box = document.getElementById('boxW');
