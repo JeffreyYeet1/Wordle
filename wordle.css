@@ -1,8 +1,7 @@
 @media only screen and (max-width: 600px) {
     /* Styles for small screens (e.g., mobile) */
     body {
-      margin: 0;
-      padding: 0;
+      width:50%;
     }
   }
 
