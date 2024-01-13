@@ -1,3 +1,10 @@
+@media only screen and (max-width: 600px) {
+    /* Styles for small screens (e.g., mobile) */
+    .keyboardTable {
+      width:50%;
+    }
+  }
+
 td{
     width: 55px;
     height: 55px;
