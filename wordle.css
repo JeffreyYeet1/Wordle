@@ -16,7 +16,7 @@ body{
     background-color:rgb(18,18,19);
 }
 
-table{
+#guessTable{
 
     border-spacing:9px;
     margin-left:auto;
@@ -50,7 +50,7 @@ div{
     align-items: center;
     text-align: center;
     position:relative;
-    bottom:440px;
+    bottom:685px;
 }
 
 span{
@@ -58,4 +58,46 @@ span{
     right:1%;
     font-size:15px;
     color:white;
+}
+
+#row1{
+    position:relative;
+    width:510px;
+}
+
+#row2{
+    width:459px;
+    position:relative;
+    bottom:18px;
+}
+#row3{
+    width:510px;
+    position:relative;
+    bottom:36px;
+}
+.keyboardTable{
+    margin-left:auto;
+    margin-right:auto;
+    border-spacing:8px;
+}
+
+.keyboardData{
+    background-color: rgb(129,131,132);
+    outline:none;
+    border-radius: 5px;
+}
+
+.keyboardLetters{
+    font-size:20px;
+    text-align: center;
+}
+
+#enterKey{
+    width:80px;
+}
+#enter{
+    font-size:15px;
+}
+#backspaceKey{
+    width:90px;
 }

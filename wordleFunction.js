@@ -72,6 +72,10 @@ function showBoxL() {
     box.style.display = 'block'; // Show the box when button is clicked
 }
 function playAgain(){
+    const alphabet = [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+      ];
     const box = document.getElementById('boxW');
     box.style.display = 'none';
     const box1 = document.getElementById('boxL');
@@ -84,17 +88,24 @@ function playAgain(){
             document.getElementById("t"+x.toString()+i.toString()).style.backgroundColor = "rgb(18,18,19)";
             }
     }
+    for(x of alphabet)
+        document.getElementById(x).style.backgroundColor = "rgb(129,131,132)";
     level = 0;
     win = false;
+    kDisplay = {};
 }
-let win = false;
-let level = 0;
-var words = select_word().toUpperCase();
-// Attaching an event listener to the document to capture keyboard events
-document.addEventListener('keydown', function(event) {
-    // Event handler function that runs when a key is pressed
-    // You can access information about the pressed key using properties of the event object
-    const keyPressed = (event.key).toUpperCase();        
+
+function getKeyByValue(object, value) {
+    for (const key in object) {
+      if (object.hasOwnProperty(key) && object[key] === value) {
+        return key;
+      }
+    }
+    return null; // Return null if the value is not found
+}
+
+function keyInput(a){        
+    keyPressed = a.toString().toUpperCase();
     if(keyPressed === "BACKSPACE"){
         for(let i = 4; i > -1;i--){
             if (document.getElementById(level.toString()+i.toString()).innerHTML!=""){
@@ -134,14 +145,23 @@ document.addEventListener('keydown', function(event) {
             else if(colorCode[x]=="0"){
                 document.getElementById("t"+level.toString()+x.toString()).style.backgroundColor = "rgb(58,58,60)";
                 document.getElementById("t"+level.toString()+x.toString()).style.outline = "2px solid rgb(58,58,60)";
+                if (kDisplay[guess[x]] != "GREEN" && kDisplay[guess[x]] != "YELLOW"){
+                    document.getElementById(guess[x]).style.backgroundColor = "rgb(58,58,60)";
+                }
             }
             else if (colorCode[x] == "1"){
                 document.getElementById("t"+level.toString()+x.toString()).style.backgroundColor = "rgb(181,159,59)";
                 document.getElementById("t"+level.toString()+x.toString()).style.outline = "2px solid rgb(181,159,59)";
+                if (kDisplay[guess[x]] != "GREEN"){
+                    document.getElementById(guess[x]).style.backgroundColor = "rgb(181,159,59)";
+                    kDisplay[guess[x]] = "YELLOW";
+                }
             }   
             else if (colorCode[x] == "2"){
                 document.getElementById("t"+level.toString()+x.toString()).style.backgroundColor = "rgb(83,141,78)";
                 document.getElementById("t"+level.toString()+x.toString()).style.outline = "2px solid rgb(83,141,78)";
+                document.getElementById(guess[x]).style.backgroundColor = "rgb(83,141,78)";
+                kDisplay[guess[x]] = "GREEN";
             }
             if (!win && level == 6)
                 win = false;
@@ -160,4 +180,14 @@ document.addEventListener('keydown', function(event) {
             document.getElementsByClassName("word").innerHTML = words;
         }
     }
+}
+var kDisplay = {};
+var win = false;
+var level = 0;
+var words = select_word().toUpperCase();
+// Attaching an event listener to the document to capture keyboard events
+document.addEventListener('keydown', function(event) {
+    const keyPressed = (event.key).toUpperCase();
+    keyInput(keyPressed);
 });
+

@@ -10,13 +10,14 @@
     <title>Wordle</title>
     <link rel = "stylesheet" href = "wordle.css">
     <link href="https://fonts.cdnfonts.com/css/clear-sans" rel="stylesheet">
+    <script src = "wordleFunction.js"></script>
 </head>
 <body>
     <div>Wordle</div>
     <hr>
     <span>Jeffrey Ye</span>
     <br>
-    <table>
+    <table id = "guessTable">
         <th></th>
         <tr><td id = "t00"><div id = "00"></div></td>
             <td id = "t01"><div id = "01"></div></td>
@@ -55,6 +56,49 @@
             <td id = "t54"><div id = "54"></div></td>
         </tr>
     </table>
+    <table class = "keyboardTable" id = "row1">
+        <th></th>
+        <tr>
+            <td id = "Q" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("Q")>Q</div></td>
+            <td id = "W" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("W")>W</div></td>
+            <td id = "E" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("E")>E</div></td>
+            <td id = "R" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("R")>R</div></td>
+            <td id = "T" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("T")>T</div></td>
+            <td id = "Y" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("Y")>Y</div></td>
+            <td id = "U" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("U")>U</div></td>
+            <td id = "I" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("I")>I</div></td>
+            <td id = "O" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("O")>O</div></td>
+            <td id = "P" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("P")>P</div></td>
+        </tr>
+    </table>
+    <table class = "keyboardTable" id = "row2">
+        <th></th>
+        <tr>
+            <td id = "A" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("A")>A</div></td>
+            <td id = "S" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("S")>S</div></td>
+            <td id = "D" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("D")>D</div></td>
+            <td id = "F" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("F")>F</div></td>
+            <td id = "G" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("G")>G</div></td>
+            <td id = "H" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("H")>H</div></td>
+            <td id = "J" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("J")>J</div></td>
+            <td id = "K" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("K")>K</div></td>
+            <td id = "L" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("L")>L</div></td>
+        </tr>
+    </table>
+    <table class = "keyboardTable" id = "row3">
+        <th></th>
+        <tr>
+            <td id = "enterKey" class = "keyboardData"><div id = "enter" class = "keyboardLetters" onclick = keyInput("ENTER")>ENTER</div></td>
+            <td id = "Z" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("Z")>Z</div></td>
+            <td id = "X" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("X")>X</div></td>
+            <td id = "C" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("C")>C</div></td>
+            <td id = "V" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("V")>V</div></td>
+            <td id = "B" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("B")>B</div></td>
+            <td id = "N" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("N")>N</div></td>
+            <td id = "M" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("M")>M</div></td>
+            <td id = "backspaceKey" class = "keyboardData"><div class = "keyboardLetters" onclick = keyInput("BACKSPACE")><--</div></td>
+        </tr>
+    </table>
     <div class = "box" id = "boxL">
         <p>You Lost!</p>
         <p>The word was</p>
@@ -72,7 +116,5 @@
             Play again?
         </button>
     </div>
-    <script src = "wordleFunction.js"></script>
-    
 </body>
 </html>
