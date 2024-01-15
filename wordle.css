@@ -1,8 +1,5 @@
 @media only screen and (max-width: 600px) {
     /* Styles for small screens (e.g., mobile) */
-    .keyboardTable {
-      width:50%;
-    }
   }
 
 td{
@@ -24,7 +21,6 @@ body{
 }
 
 #guessTable{
-
     border-spacing:9px;
     margin-left:auto;
     margin-right:auto;
