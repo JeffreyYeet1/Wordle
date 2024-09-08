@@ -64,10 +64,12 @@ function select_word(){
     return words[Math.floor(Math.random() * words.length)];
 }
 function showBoxW() {
+    document.getElementById("Given1").textContent = words;
     const box = document.getElementById('boxW');
     box.style.display = 'block'; // Show the box when button is clicked
   }
 function showBoxL() {
+    document.getElementById("Given").textContent = words;
     const box = document.getElementById('boxL');
     box.style.display = 'block'; // Show the box when button is clicked
 }
@@ -126,8 +128,6 @@ function keyInput(a){
             }
         }
     }
-    document.getElementById("Given").innerHTML= words;
-    document.getElementById("Given1").innerHTML= words;
     if (keyPressed === 'ENTER' && document.getElementById(level.toString()+"4").innerHTML !="") {
         let guess = "";
         for(let i = 0; i<5;i++){
